@@ -1,0 +1,14 @@
+{
+  "extends": ["@tsconfig/node22", "@tsconfig/strictest"],
+  "includes": ["src/**/*"],
+  "compilerOptions": {
+    "incremental": true,
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    // Stylistic
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false
+  }
+}

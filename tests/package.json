@@ -1,0 +1,17 @@
+{
+  "name": "turbo-daemon-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:types": "tsc --noEmit"
+  },
+  "volta": {
+    "extends": "../../../package.json"
+  },
+  "devDependencies": {
+    "turbo-daemon": "workspace:^",
+    "expect-type": "^0.19.0",
+    "salvatore": "^0.1.2",
+    "typescript": "5.5.3"
+  }
+}
