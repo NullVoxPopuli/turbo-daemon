@@ -11,6 +11,7 @@ A tool for running turbo locally as a demon that can be integrated with monorepo
 - wrapper around the highly tried and tested [turborepo-remote-cache](https://github.com/ducktors/turborepo-remote-cache/) server
 - idempotent   
   (call as many times as you want, only one server will run)
+  - powered by [salvatore](https://github.com/nullvoxpopuli/salvatore)
 - automatically shuts down after inactivity  
 - CLI available for debugging
 
@@ -77,6 +78,9 @@ async function getServer() {
 	}
 }
 
+/**
+ * have your package.json scripts call this instead of turbo directly
+ */
 export async function wrappedTurbo(args) {
 	const connectionInfo = await getServer();
 
