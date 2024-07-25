@@ -17,6 +17,11 @@ let exitTimer;
 
 fileLogger.info('Booting Turbo fastify app...');
 
+/**
+ * Sanity checks for the consumer passing in environment variables
+ */
+fileLogger.info(`Detected TURBO_TEAM: \`${process.env.TURBO_TEAM}\``);
+
 // const { createApp } = await import("turborepo-remote-cache");
 
 /**
