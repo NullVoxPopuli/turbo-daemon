@@ -1,6 +1,6 @@
 {
   "name": "turbo-daemon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:NullVoxPopuli/turbo-daemon.git"
@@ -29,7 +29,6 @@
     "lint:prettier": "prettier . --check",
     "lint:types": "tsc --noEmit",
     "cli": "node ./src/bin.js",
-    "lint:types": "tsc --noEmit",
     "logs": "pnpm cli logs"
   },
   "dependencies": {
