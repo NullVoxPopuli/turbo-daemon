@@ -15,9 +15,13 @@
     "turbo-daemon": "./src/bin.js"
   },
   "scripts": {
+    "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
     "lint:js:fix": "eslint . --fix",
     "lint:js": "eslint .",
     "lint:prettier:fix": "prettier . --write",
+    "lint:package": "publint",
+    "lint:published-types": "attw --pack . --ignore-rules no-resolution cjs-resolves-to-esm",
     "lint:prettier": "prettier . --check",
     "lint:types": "tsc --noEmit",
     "cli": "node ./src/bin.js",
@@ -31,15 +35,18 @@
     "turborepo-remote-cache": "^2.2.1"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.3",
     "@nullvoxpopuli/eslint-configs": "^4.0.0",
     "@tsconfig/node22": "^22.0.0",
     "@tsconfig/strictest": "^2.0.5",
     "@types/node": "20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
+    "concurrently": "^8.2.2",
     "eslint": "8.57.0",
     "execa": "^9.3.0",
     "prettier": "3.3.2",
+    "publint": "^0.2.9",
     "typescript": "5.5.3"
   },
   "volta": {
