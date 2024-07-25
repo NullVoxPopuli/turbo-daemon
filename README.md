@@ -61,6 +61,14 @@ async function getServer() {
 		}
 	}
 
+    /**
+     * Environment variables from 
+     * https://ducktors.github.io/turborepo-remote-cache/environment-variables.html
+     */
+    Object.assign(process.env, {
+      /* ... */
+    });
+
 	await daemon.ensureStarted();
 	return {
 		TURBO_API: `http://localhost:${daemon.info.data.port}`,
