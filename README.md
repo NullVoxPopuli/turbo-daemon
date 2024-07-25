@@ -65,8 +65,13 @@ async function getServer() {
     /**
      * Environment variables from 
      * https://ducktors.github.io/turborepo-remote-cache/environment-variables.html
+     *
+     * These environment variables are required for the daemon to have 
+     * access to remote storage.
+     * If these are omitted, turbo will still work, but fallback to local, in-repo cache.
      */
     Object.assign(process.env, {
+      TURBO_TEAM,
       /* ... */
     });
 
