@@ -22,7 +22,11 @@ fileLogger.info('Booting Turbo fastify app...');
  */
 fileLogger.info(`Detected TURBO_TEAM: \`${process.env.TURBO_TEAM}\``);
 
-// const { createApp } = await import("turborepo-remote-cache");
+let storageEnv = Object.entries(process.env).filter(([key]) => key.startsWith('STORAGE_'));
+
+for (let [key, value] of storageEnv) {
+  fileLogger.info(`Detected ${key}: \`${value}\``);
+}
 
 /**
  * Some of this file is token from
