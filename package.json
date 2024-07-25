@@ -1,6 +1,10 @@
 {
   "name": "turbo-daemon",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NullVoxPopuli/turbo-daemon.git"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -8,12 +12,12 @@
       "default": "./src/index.js"
     }
   },
-  "files": [
-    "src"
-  ],
   "bin": {
     "turbo-daemon": "./src/bin.js"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
     "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
@@ -25,6 +29,7 @@
     "lint:prettier": "prettier . --check",
     "lint:types": "tsc --noEmit",
     "cli": "node ./src/bin.js",
+    "lint:types": "tsc --noEmit",
     "logs": "pnpm cli logs"
   },
   "dependencies": {
@@ -47,9 +52,12 @@
     "execa": "^9.3.0",
     "prettier": "3.3.2",
     "publint": "^0.2.9",
+    "release-plan": "^0.9.0",
     "typescript": "5.5.3"
   },
+  "packageManager": "pnpm@9.6.0",
   "volta": {
-    "node": "20.16.0"
+    "node": "20.16.0",
+    "pnpm": "9.6.0"
   }
 }
