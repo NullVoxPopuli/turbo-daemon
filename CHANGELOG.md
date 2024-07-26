@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-07-26)
+
+turbo-daemon 1.1.1 (patch)
+
+#### :house: Internal
+* `turbo-daemon`
+  * [#11](https://github.com/NullVoxPopuli/turbo-daemon/pull/11) Delete tsconfig.tsbuildinfo ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-07-25)
 
 turbo-daemon 1.1.0 (minor)
