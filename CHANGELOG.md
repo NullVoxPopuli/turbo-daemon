@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-03-12)
+
+turbo-daemon 1.1.1 (patch)
+
+#### :bug: Bug Fix
+* `turbo-daemon`
+  * [#13](https://github.com/NullVoxPopuli/turbo-daemon/pull/13) Support turborepo-remote-cache >= 2.10 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `turbo-daemon`
+  * [#11](https://github.com/NullVoxPopuli/turbo-daemon/pull/11) Delete tsconfig.tsbuildinfo ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-07-25)
 
 turbo-daemon 1.1.0 (minor)

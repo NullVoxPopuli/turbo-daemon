@@ -1,21 +1,13 @@
 {
   "solution": {
     "turbo-daemon": {
-      "impact": "minor",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.1.0",
+      "impact": "patch",
+      "oldVersion": "1.1.0",
+      "newVersion": "1.1.1",
       "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
         },
         {
           "impact": "patch",
@@ -25,5 +17,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2024-07-25)\n\nturbo-daemon 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `turbo-daemon`\n  * [#10](https://github.com/NullVoxPopuli/turbo-daemon/pull/10) Log more info for debugging purposes, proving that storage is configured correctly ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#8](https://github.com/NullVoxPopuli/turbo-daemon/pull/8) Add log for TURBO_TEAM so that folks know that the daemon is detecting their environment variables ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :bug: Bug Fix\n* `turbo-daemon`\n  * [#6](https://github.com/NullVoxPopuli/turbo-daemon/pull/6) Create LICENSE ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#4](https://github.com/NullVoxPopuli/turbo-daemon/pull/4) Don't specify any storage env vars ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :memo: Documentation\n* `turbo-daemon`\n  * [#9](https://github.com/NullVoxPopuli/turbo-daemon/pull/9) Add clarification on env vars ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#7](https://github.com/NullVoxPopuli/turbo-daemon/pull/7) Demonstrate how to configure environment variables in the README ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `turbo-daemon`\n  * [#2](https://github.com/NullVoxPopuli/turbo-daemon/pull/2) Setup release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#1](https://github.com/NullVoxPopuli/turbo-daemon/pull/1) Setup CI ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-03-12)\n\nturbo-daemon 1.1.1 (patch)\n\n#### :bug: Bug Fix\n* `turbo-daemon`\n  * [#13](https://github.com/NullVoxPopuli/turbo-daemon/pull/13) Support turborepo-remote-cache >= 2.10 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `turbo-daemon`\n  * [#11](https://github.com/NullVoxPopuli/turbo-daemon/pull/11) Delete tsconfig.tsbuildinfo ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
