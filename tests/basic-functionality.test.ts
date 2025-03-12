@@ -1,10 +1,11 @@
+import { existsSync } from 'node:fs';
 import { readFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { $ } from 'execa';
-import { beforeAll, describe, expect as incorrectExpect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect as throwErrorIfNot, it } from 'vitest';
 
-const expect = incorrectExpect.soft;
+const expect = throwErrorIfNot.soft;
 
 let bin = join(import.meta.dirname, '../src/bin.js');
 let log = {
@@ -30,8 +31,14 @@ async function readDaemonLog() {
 
 describe('boots', () => {
   beforeAll(async () => {
-    await rm(log.daemon);
-    await rm(log.turbo);
+    if (existsSync(log.daemon)) await rm(log.daemon);
+    if (existsSync(log.turbo)) await rm(log.turbo);
+  });
+
+  afterAll(async () => {
+    let { exitCode } = await $({ reject: false })`node ${bin} stop`;
+
+    throwErrorIfNot(exitCode).toEqual(0);
   });
 
   it('without error', async () => {

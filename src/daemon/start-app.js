@@ -43,7 +43,7 @@ const fastifyApp = createApp({
    * Allows us to debug, since, as a daemon, we won't have access to stdout/stderr
    * (default logger logs to stdout/stderr)
    */
-  logger: fileLogger,
+  loggerInstance: fileLogger,
 });
 
 /**
