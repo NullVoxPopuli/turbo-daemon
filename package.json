@@ -36,7 +36,7 @@
     "get-port": "^7.1.0",
     "pino": "^9.2.0",
     "salvatore": "^0.1.2",
-    "turborepo-remote-cache": "^2.2.1"
+    "turborepo-remote-cache": "^2.3.4"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.3",
