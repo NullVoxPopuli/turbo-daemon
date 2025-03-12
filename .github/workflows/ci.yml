@@ -22,14 +22,15 @@ jobs:
       - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm lint
 
-  # default_tests:
-  #   name: Default Tests
-  #   timeout-minutes: 5
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: wyvox/action-setup-pnpm@v3
-  #     - run: pnpm test 
+  default_tests:
+    name: Default Tests
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm vitest 
+        working-directory: tests
   #
   # floating_tests:
   #   name: Floating Deps Test
