@@ -18,10 +18,13 @@ export { TURBO_TOKEN } from './shared.js';
 export function createDaemon(options = {}) {
   const { bodyLimit, ...daemonOptions } = options;
 
-  // Set BODY_LIMIT environment variable if provided
-  // The daemon process will inherit this environment variable
+  // Set BODY_LIMIT environment variable for the daemon process
+  // This is an internal implementation detail - users should only configure via the bodyLimit option
   if (bodyLimit !== undefined) {
     process.env.BODY_LIMIT = String(bodyLimit);
+  } else {
+    // Clear any pre-set BODY_LIMIT to ensure we use the default from turborepo-remote-cache
+    delete process.env.BODY_LIMIT;
   }
 
   return new Daemon(daemonScriptPath, {

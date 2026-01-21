@@ -7,6 +7,6 @@ Object.assign(process.env, {
   LOG_LEVEL: 'trace',
   LOG_FILE: turboLogsPath,
   TURBO_TOKEN,
-  // BODY_LIMIT can be set via createDaemon({ bodyLimit: ... }) and will be inherited here
-  // Default is 104857600 (100 MB) if not set
+  // Note: BODY_LIMIT is set internally by createDaemon() if provided
+  // It should not be set directly by users
 });

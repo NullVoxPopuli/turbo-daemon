@@ -112,12 +112,6 @@ const daemon = createDaemon({
 });
 ```
 
-You can also set this via the `BODY_LIMIT` environment variable:
-
-```bash
-export BODY_LIMIT=209715200  # 200 MB in bytes
-```
-
 ## Debugging
 
 This project stores files in `<git root>/node_modules/.turbo-daemon/`
