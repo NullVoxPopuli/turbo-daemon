@@ -15,7 +15,16 @@ export const TURBO_TOKEN: string;
 export const pidFile: PidFile;
 
 type FullOptions = ConstructorParameters<typeof Daemon>[1];
-export type CreateDaemonOptions = Omit<FullOptions, 'logFile' | 'pidFilePath'>;
+type DaemonOptions = Omit<FullOptions, 'logFile' | 'pidFilePath'>;
+
+export interface CreateDaemonOptions extends DaemonOptions {
+  /**
+   * Maximum body size in bytes for cache artifact uploads.
+   * Default is 104857600 (100 MB).
+   * Set to a higher value if you have very large assets to cache.
+   */
+  bodyLimit?: number;
+}
 
 /**
  * Cretaes a Daemon instance for starting, stopping, and managing the daemon.
