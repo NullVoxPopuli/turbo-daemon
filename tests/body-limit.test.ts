@@ -31,17 +31,21 @@ describe('bodyLimit configuration', () => {
   afterAll(async () => {
     // Clean up environment variable
     delete process.env.BODY_LIMIT;
+
     let { exitCode } = await $({ reject: false })`node ${bin} stop`;
+
     throwErrorIfNot(exitCode).toEqual(0);
   });
 
   it('uses default body limit when not configured', async () => {
     // Start the daemon without setting BODY_LIMIT
     let { exitCode } = await $({ reject: false })`node ${bin} start`;
+
     expect(exitCode).toEqual(0);
 
     // The daemon should start successfully with the default limit
     let turbo = await readFastifyLog(log.turbo);
+
     for (let entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
@@ -55,10 +59,12 @@ describe('bodyLimit configuration', () => {
     process.env.BODY_LIMIT = '209715200';
 
     let { exitCode } = await $({ reject: false })`node ${bin} start`;
+
     expect(exitCode).toEqual(0);
 
     // The daemon should start successfully with the custom limit
     let turbo = await readFastifyLog(log.turbo);
+
     for (let entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }

@@ -2,9 +2,8 @@ import { existsSync } from 'node:fs';
 import { readFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { afterAll, beforeAll, describe, expect as throwErrorIfNot, it } from 'vitest';
-
 import { createDaemon } from 'turbo-daemon';
+import { afterAll, beforeAll, describe, expect as throwErrorIfNot, it } from 'vitest';
 
 const expect = throwErrorIfNot.soft;
 
@@ -44,6 +43,7 @@ describe('createDaemon bodyLimit option', () => {
 
     // Verify no errors in the logs
     let turbo = await readFastifyLog(log.turbo);
+
     for (let entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
@@ -62,6 +62,7 @@ describe('createDaemon bodyLimit option', () => {
 
     // Verify no errors in the logs
     let turbo = await readFastifyLog(log.turbo);
+
     for (let entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
