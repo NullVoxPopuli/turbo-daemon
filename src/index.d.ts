@@ -1,4 +1,5 @@
 import type { Daemon, PidFile } from 'salvatore';
+import type { createApp } from 'turborepo-remote-cache';
 
 /**
  * The non-secret that the turbo CLI/client uses to communicate with the server.
@@ -15,9 +16,21 @@ export const TURBO_TOKEN: string;
 export const pidFile: PidFile;
 
 type FullOptions = ConstructorParameters<typeof Daemon>[1];
-export type CreateDaemonOptions = Omit<FullOptions, 'logFile' | 'pidFilePath'>;
+type DaemonOptions = Omit<FullOptions, 'logFile' | 'pidFilePath'>;
+type FastifyServerOptions = Parameters<typeof createApp>[0];
+
+export interface CreateDaemonOptions extends DaemonOptions {
+  fastifyOptions?: FastifyServerOptions;
+}
 
 /**
- * Cretaes a Daemon instance for starting, stopping, and managing the daemon.
+ * Creates a Daemon instance for starting, stopping, and managing the daemon.
+ *
+ * Also takes FastifyServerOptions in `fastifyOptions` property.
+ *
+ * https://github.com/fastify/fastify/blob/5c14e05670c80455b99286ee0b6eac05eabec831/fastify.d.ts#L109
+ *
+ * Which are passed to the underlying turborepo-remote-cache here:
+ * https://github.com/ducktors/turborepo-remote-cache/blob/2d02cacaa2f6cb6cfe9877cb90fa22f3cebc7fac/src/app.ts#L23
  */
 export function createDaemon(options?: CreateDaemonOptions): Daemon;
