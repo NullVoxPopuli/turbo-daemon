@@ -10,7 +10,7 @@ import getPort from 'get-port';
 import { createApp } from 'turborepo-remote-cache';
 
 import { pidFilePath } from '../shared.js';
-import { cleanup, fileLogger, ONE_HUNDRED_MB, pidFile, THIRTY_MINUTES } from './setup.js';
+import { cleanup, fileLogger, pidFile, THIRTY_MINUTES } from './setup.js';
 
 /** @type {ReturnType<typeof setTimeout>} */
 let exitTimer;
@@ -33,12 +33,6 @@ for (const [key, value] of storageEnv) {
  * https://github.com/ducktors/turborepo-remote-cache/blob/main/src/index.ts
  */
 const fastifyApp = createApp({
-  /**
-   * Default is 50MB (for turborepo-remote-cache) and 1MB (for fastify)
-   * we have some very large assets.
-   */
-  bodyLimit: ONE_HUNDRED_MB,
-
   /**
    * Allows us to debug, since, as a daemon, we won't have access to stdout/stderr
    * (default logger logs to stdout/stderr)

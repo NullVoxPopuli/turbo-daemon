@@ -1,6 +1,5 @@
 {
   "extends": ["@tsconfig/node22", "@tsconfig/strictest"],
-  "includes": ["src/**/*"],
   "compilerOptions": {
     "incremental": true,
     "module": "Node16",

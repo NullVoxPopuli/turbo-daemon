@@ -97,6 +97,18 @@ export async function wrappedTurbo(args) {
 }
 ```
 
+### Increasing the allowed size of uploaded assets
+
+In your local / ci env set the `BODY_LIMIT` environment variable.
+The value is measured in bytes.
+
+e.g.:
+```bash
+BODY_LIMIT=1048576 # 1 MB (fastify default, 1024^2)
+BODY_LIMIT=536870912 # 512 MB (1024^2 * 512)
+BODY_LIMIT=1073741824 # 1 GB (1024^3)
+```
+
 ## Debugging
 
 This project stores files in `<git root>/node_modules/.turbo-daemon/`
