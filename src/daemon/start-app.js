@@ -34,6 +34,12 @@ for (let [key, value] of storageEnv) {
  */
 const fastifyApp = createApp({
   /**
+   * Default is 100MB (from turborepo-remote-cache) and 1MB (for fastify)
+   * Can be overridden by setting BODY_LIMIT environment variable
+   */
+  ...(process.env.BODY_LIMIT && { bodyLimit: Number(process.env.BODY_LIMIT) }),
+
+  /**
    * Allows us to debug, since, as a daemon, we won't have access to stdout/stderr
    * (default logger logs to stdout/stderr)
    */

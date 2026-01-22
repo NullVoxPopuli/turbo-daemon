@@ -7,6 +7,5 @@ Object.assign(process.env, {
   LOG_LEVEL: 'trace',
   LOG_FILE: turboLogsPath,
   TURBO_TOKEN,
-  // Note: BODY_LIMIT is set internally by createDaemon() if provided
-  // It should not be set directly by users
+  // BODY_LIMIT can be set by users to configure max upload size (default: 100MB)
 });

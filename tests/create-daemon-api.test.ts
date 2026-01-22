@@ -21,7 +21,7 @@ async function readFastifyLog(filePath: string) {
   return parsed;
 }
 
-describe('createDaemon bodyLimit option', () => {
+describe('BODY_LIMIT environment variable', () => {
   beforeAll(async () => {
     if (existsSync(log.daemon)) await rm(log.daemon);
     if (existsSync(log.turbo)) await rm(log.turbo);
@@ -32,9 +32,11 @@ describe('createDaemon bodyLimit option', () => {
     delete process.env.BODY_LIMIT;
   });
 
-  it('accepts bodyLimit option and starts successfully', async () => {
-    // Create daemon with custom body limit (150 MB)
-    const daemon = createDaemon({ bodyLimit: 150 * 1024 * 1024 });
+  it('respects BODY_LIMIT when set', async () => {
+    // Set custom body limit via environment variable (150 MB)
+    process.env.BODY_LIMIT = String(150 * 1024 * 1024);
+
+    const daemon = createDaemon();
 
     await daemon.ensureStarted();
 
@@ -52,7 +54,9 @@ describe('createDaemon bodyLimit option', () => {
     await daemon.stop();
   }, 10_000);
 
-  it('works without bodyLimit option (uses default)', async () => {
+  it('works without BODY_LIMIT (uses default)', async () => {
+    delete process.env.BODY_LIMIT;
+
     const daemon = createDaemon();
 
     await daemon.ensureStarted();
