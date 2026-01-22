@@ -19,6 +19,27 @@ export const turboLogsPath = path.join(ourStorage, 'turbo.log');
 export const daemonScriptPath = path.join(__dirname, 'daemon', 'index.js');
 export const pidFilePath = path.join(ourStorage, '.turbo.pid');
 
+const serverPath = path.join(ourStorage, 'server-config.json');
+
+export function readServerConfig() {
+  if (!fsSync.existsSync(serverPath)) {
+    return {};
+  }
+
+  try {
+    const buffer = fsSync.readFileSync(serverPath);
+    const json = JSON.parse(buffer.toString());
+
+    return json;
+  } catch {
+    return {};
+  }
+}
+
+export function writeServerConfig(options = {}) {
+  fsSync.writeFileSync(serverPath, JSON.stringify(options ?? {}));
+}
+
 /**
  * We don't need an actual secret, because the client and server live
  * on the same machine.

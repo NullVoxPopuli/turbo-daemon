@@ -1,6 +1,6 @@
 import { Daemon, PidFile } from 'salvatore';
 
-import { daemonLogsPath, daemonScriptPath, pidFilePath } from './shared.js';
+import { daemonLogsPath, daemonScriptPath, pidFilePath, writeServerConfig } from './shared.js';
 
 export { TURBO_TOKEN } from './shared.js';
 
@@ -26,9 +26,7 @@ export function createDaemon(options = {}) {
     ...opts,
   });
 
-  pidFile.write({
-    fastifyOptions,
-  });
+  writeServerConfig(fastifyOptions);
 
   return daemon;
 }

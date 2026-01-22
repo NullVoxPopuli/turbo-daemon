@@ -9,7 +9,7 @@ import getPort from 'get-port';
 // @ts-expect-error - this package does not provide types
 import { createApp } from 'turborepo-remote-cache';
 
-import { pidFilePath } from '../shared.js';
+import { pidFilePath, readServerConfig } from '../shared.js';
 import { cleanup, fileLogger, pidFile, THIRTY_MINUTES } from './setup.js';
 
 /** @type {ReturnType<typeof setTimeout>} */
@@ -28,7 +28,7 @@ for (const [key, value] of storageEnv) {
   fileLogger.info(`Detected ${key}: \`${value}\``);
 }
 
-const options = pidFile.data.fastifyOptions || {};
+const options = readServerConfig();
 
 /**
  * Some of this file is token from

@@ -19,7 +19,6 @@ A tool for running turbo locally as a demon that can be integrated with monorepo
 
 ```bash 
 pnpm add turbo-daemon
-
 ```
 
 Or from git:
