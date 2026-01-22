@@ -18,6 +18,6 @@ type FullOptions = ConstructorParameters<typeof Daemon>[1];
 export type CreateDaemonOptions = Omit<FullOptions, 'logFile' | 'pidFilePath'>;
 
 /**
- * Cretaes a Daemon instance for starting, stopping, and managing the daemon.
+ * Creates a Daemon instance for starting, stopping, and managing the daemon.
  */
 export function createDaemon(options?: CreateDaemonOptions): Daemon;
