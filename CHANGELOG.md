@@ -1,5 +1,22 @@
 # Changelog
 
+## Release (2026-01-22)
+
+* turbo-daemon 2.0.0 (major)
+
+#### :boom: Breaking Change
+* `turbo-daemon`
+  * [#16](https://github.com/NullVoxPopuli/turbo-daemon/pull/16) Remove hard-coded `bodyLimit`,  defer to underlying implementation ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `turbo-daemon`
+  * [#20](https://github.com/NullVoxPopuli/turbo-daemon/pull/20) Refactor tests to prepare for multiple files ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#19](https://github.com/NullVoxPopuli/turbo-daemon/pull/19) pnpm dlx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#17](https://github.com/NullVoxPopuli/turbo-daemon/pull/17) Upgrade deps (linting, packageManager, etc) ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-03-12)
 
 turbo-daemon 1.1.1 (patch)
