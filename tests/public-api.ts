@@ -28,6 +28,7 @@ expectTypeOf<CreateDaemonOptions>().toEqualTypeOf<{
   runWith?: string;
   timeout?: number;
   restartWhen?: () => boolean;
+  fastifyOptions?: any;
 }>();
 
 // arguments are optional

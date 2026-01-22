@@ -19,7 +19,6 @@ A tool for running turbo locally as a demon that can be integrated with monorepo
 
 ```bash 
 pnpm add turbo-daemon
-
 ```
 
 Or from git:
@@ -95,6 +94,29 @@ export async function wrappedTurbo(args) {
 		}
 	})
 }
+```
+
+## Configuring fastify
+
+The undelying server started by the daemon uses fastify.
+
+When calling `createDaemon`, you may pass the `fastifyOptions`:
+```js
+const daemon = createDaemon({
+	/**
+	 * Options from
+	 * https://github.com/fastify/fastify/blob/5c14e05670c80455b99286ee0b6eac05eabec831/fastify.d.ts#L109 
+	 * 
+	 * Passed first in to 
+	 * https://github.com/ducktors/turborepo-remote-cache/blob/2d02cacaa2f6cb6cfe9877cb90fa22f3cebc7fac/src/app.ts#L12
+	 * 
+	 * These _must_ be JSON serializable.
+	 * (no functions)
+	 */
+	fastifyOptions: {
+		// ...
+	}
+});
 ```
 
 ## Debugging
