@@ -17,8 +17,8 @@ export const pidFile = new PidFile(pidFilePath);
  * @param {import('./index.d.ts').CreateDaemonOptions} [options]
  */
 export function createDaemon(options = {}) {
-  let { fastifyOptions = {}, ...opts } = options;
-  let daemon = new Daemon(daemonScriptPath, {
+  const { fastifyOptions = {}, ...opts } = options;
+  const daemon = new Daemon(daemonScriptPath, {
     pidFilePath,
     logFile: daemonLogsPath,
     // This is arbitrary, but can be overwritten, depending on average machine performance

@@ -7,16 +7,16 @@ import { afterAll, beforeAll, describe, expect as throwErrorIfNot, it } from 'vi
 
 const expect = throwErrorIfNot.soft;
 
-let log = {
+const log = {
   daemon: join(import.meta.dirname, '../node_modules/.turbo-daemon/daemon.log'),
   turbo: join(import.meta.dirname, '../node_modules/.turbo-daemon/turbo.log'),
 };
 
 async function readFastifyLog(filePath: string) {
-  let buffer = await readFile(filePath);
-  let str = buffer.toString();
-  let lines = str.split('\n').filter(Boolean);
-  let parsed = lines.map((line) => JSON.parse(line));
+  const buffer = await readFile(filePath);
+  const str = buffer.toString();
+  const lines = str.split('\n').filter(Boolean);
+  const parsed = lines.map((line) => JSON.parse(line));
 
   return parsed;
 }
@@ -42,9 +42,9 @@ describe('bodyLimit configuration', () => {
     expect(daemon.info.isRunning).toBe(true);
 
     // Verify no errors in the logs
-    let turbo = await readFastifyLog(log.turbo);
+    const turbo = await readFastifyLog(log.turbo);
 
-    for (let entry of turbo) {
+    for (const entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
 
@@ -64,9 +64,9 @@ describe('bodyLimit configuration', () => {
     expect(daemon.info.isRunning).toBe(true);
 
     // Verify no errors in the logs
-    let turbo = await readFastifyLog(log.turbo);
+    const turbo = await readFastifyLog(log.turbo);
 
-    for (let entry of turbo) {
+    for (const entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
 
@@ -87,9 +87,9 @@ describe('bodyLimit configuration', () => {
     expect(daemon.info.isRunning).toBe(true);
 
     // Verify no errors in the logs
-    let turbo = await readFastifyLog(log.turbo);
+    const turbo = await readFastifyLog(log.turbo);
 
-    for (let entry of turbo) {
+    for (const entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
 
@@ -108,9 +108,9 @@ describe('bodyLimit configuration', () => {
     expect(daemon.info.isRunning).toBe(true);
 
     // Verify no errors in the logs
-    let turbo = await readFastifyLog(log.turbo);
+    const turbo = await readFastifyLog(log.turbo);
 
-    for (let entry of turbo) {
+    for (const entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
 
