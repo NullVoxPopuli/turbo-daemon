@@ -100,7 +100,7 @@ export async function wrappedTurbo(args) {
 ### Increasing the allowed size of uploaded assets
 
 In your local / ci env set the `BODY_LIMIT` environment variable.
-The value is measure in bytes.
+The value is measured in bytes.
 
 e.g.:
 ```bash
