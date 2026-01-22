@@ -30,6 +30,8 @@ for (const [key, value] of storageEnv) {
 
 const options = readServerConfig();
 
+fileLogger.info(`Fastify config: ${JSON.stringify(options)}`);
+
 /**
  * Some of this file is token from
  * https://github.com/ducktors/turborepo-remote-cache/blob/main/src/index.ts
