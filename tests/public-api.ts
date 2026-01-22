@@ -28,6 +28,7 @@ expectTypeOf<CreateDaemonOptions>().toEqualTypeOf<{
   runWith?: string;
   timeout?: number;
   restartWhen?: () => boolean;
+  bodyLimit?: number;
 }>();
 
 // arguments are optional
