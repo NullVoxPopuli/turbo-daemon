@@ -22,9 +22,9 @@ fileLogger.info('Booting Turbo fastify app...');
  */
 fileLogger.info(`Detected TURBO_TEAM: \`${process.env.TURBO_TEAM}\``);
 
-let storageEnv = Object.entries(process.env).filter(([key]) => key.startsWith('STORAGE_'));
+const storageEnv = Object.entries(process.env).filter(([key]) => key.startsWith('STORAGE_'));
 
-for (let [key, value] of storageEnv) {
+for (const [key, value] of storageEnv) {
   fileLogger.info(`Detected ${key}: \`${value}\``);
 }
 
