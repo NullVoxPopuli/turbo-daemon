@@ -6,6 +6,7 @@
     "url": "git@github.com:NullVoxPopuli/turbo-daemon.git"
   },
   "type": "module",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./src/index.d.ts",

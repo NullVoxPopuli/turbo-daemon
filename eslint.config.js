@@ -14,4 +14,10 @@ export default [
       'import/no-unassigned-import': 'off',
     },
   },
+  {
+    files: ['**/*.d.ts'],
+    rules: {
+      'no-unused-vars': 'off',
+    },
+  },
 ];
