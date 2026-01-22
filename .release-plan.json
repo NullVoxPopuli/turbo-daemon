@@ -1,13 +1,14 @@
 {
   "solution": {
     "turbo-daemon": {
-      "impact": "patch",
-      "oldVersion": "1.1.0",
-      "newVersion": "1.1.1",
+      "impact": "major",
+      "oldVersion": "1.1.1",
+      "newVersion": "2.0.0",
+      "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
         },
         {
           "impact": "patch",
@@ -17,5 +18,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-12)\n\nturbo-daemon 1.1.1 (patch)\n\n#### :bug: Bug Fix\n* `turbo-daemon`\n  * [#13](https://github.com/NullVoxPopuli/turbo-daemon/pull/13) Support turborepo-remote-cache >= 2.10 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `turbo-daemon`\n  * [#11](https://github.com/NullVoxPopuli/turbo-daemon/pull/11) Delete tsconfig.tsbuildinfo ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2026-01-22)\n\n* turbo-daemon 2.0.0 (major)\n\n#### :boom: Breaking Change\n* `turbo-daemon`\n  * [#16](https://github.com/NullVoxPopuli/turbo-daemon/pull/16) Remove hard-coded `bodyLimit`,  defer to underlying implementation ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `turbo-daemon`\n  * [#20](https://github.com/NullVoxPopuli/turbo-daemon/pull/20) Refactor tests to prepare for multiple files ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#19](https://github.com/NullVoxPopuli/turbo-daemon/pull/19) pnpm dlx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#17](https://github.com/NullVoxPopuli/turbo-daemon/pull/17) Upgrade deps (linting, packageManager, etc) ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
