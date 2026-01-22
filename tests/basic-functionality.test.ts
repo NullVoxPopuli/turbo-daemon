@@ -7,24 +7,24 @@ import { afterAll, beforeAll, describe, expect as throwErrorIfNot, it } from 'vi
 
 const expect = throwErrorIfNot.soft;
 
-let bin = join(import.meta.dirname, '../src/bin.js');
-let log = {
+const bin = join(import.meta.dirname, '../src/bin.js');
+const log = {
   daemon: join(import.meta.dirname, '../node_modules/.turbo-daemon/daemon.log'),
   turbo: join(import.meta.dirname, '../node_modules/.turbo-daemon/turbo.log'),
 };
 
 async function readFastifyLog(filePath: string) {
-  let buffer = await readFile(filePath);
-  let str = buffer.toString();
-  let lines = str.split('\n').filter(Boolean);
-  let parsed = lines.map((line) => JSON.parse(line));
+  const buffer = await readFile(filePath);
+  const str = buffer.toString();
+  const lines = str.split('\n').filter(Boolean);
+  const parsed = lines.map((line) => JSON.parse(line));
 
   return parsed;
 }
 
 async function readDaemonLog() {
-  let buffer = await readFile(log.daemon);
-  let str = buffer.toString();
+  const buffer = await readFile(log.daemon);
+  const str = buffer.toString();
 
   return str;
 }
@@ -36,13 +36,13 @@ describe('boots', () => {
   });
 
   afterAll(async () => {
-    let { exitCode } = await $({ reject: false })`node ${bin} stop`;
+    const { exitCode } = await $({ reject: false })`node ${bin} stop`;
 
     throwErrorIfNot(exitCode).toEqual(0);
   });
 
   it('without error', async () => {
-    let { stdout, exitCode, stderr } = await $({ reject: false })`node ${bin} start`;
+    const { stdout, exitCode, stderr } = await $({ reject: false })`node ${bin} start`;
 
     expect(stdout).toEqual('');
     expect(exitCode).toEqual(0);
@@ -50,9 +50,9 @@ describe('boots', () => {
 
     expect(await readDaemonLog()).not.includes('UncaughtException');
 
-    let turbo = await readFastifyLog(log.turbo);
+    const turbo = await readFastifyLog(log.turbo);
 
-    for (let entry of turbo) {
+    for (const entry of turbo) {
       expect(JSON.stringify(entry)).not.includes('FastifyError');
     }
   }, 10_000);
