@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2026-06-03)
+
+* turbo-daemon 2.1.0 (minor)
+
+#### :rocket: Enhancement
+* `turbo-daemon`
+  * [#24](https://github.com/NullVoxPopuli/turbo-daemon/pull/24) Update salvatore ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `turbo-daemon`
+  * [#22](https://github.com/NullVoxPopuli/turbo-daemon/pull/22) Add ARM testing ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2026-01-22)
 
 * turbo-daemon 2.0.0 (major)
