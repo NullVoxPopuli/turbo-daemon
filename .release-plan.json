@@ -1,14 +1,14 @@
 {
   "solution": {
     "turbo-daemon": {
-      "impact": "major",
-      "oldVersion": "1.1.1",
-      "newVersion": "2.0.0",
+      "impact": "minor",
+      "oldVersion": "2.0.0",
+      "newVersion": "2.1.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         },
         {
           "impact": "patch",
@@ -18,5 +18,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-01-22)\n\n* turbo-daemon 2.0.0 (major)\n\n#### :boom: Breaking Change\n* `turbo-daemon`\n  * [#16](https://github.com/NullVoxPopuli/turbo-daemon/pull/16) Remove hard-coded `bodyLimit`,  defer to underlying implementation ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `turbo-daemon`\n  * [#20](https://github.com/NullVoxPopuli/turbo-daemon/pull/20) Refactor tests to prepare for multiple files ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#19](https://github.com/NullVoxPopuli/turbo-daemon/pull/19) pnpm dlx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#17](https://github.com/NullVoxPopuli/turbo-daemon/pull/17) Upgrade deps (linting, packageManager, etc) ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2026-06-03)\n\n* turbo-daemon 2.1.0 (minor)\n\n#### :rocket: Enhancement\n* `turbo-daemon`\n  * [#24](https://github.com/NullVoxPopuli/turbo-daemon/pull/24) Update salvatore ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `turbo-daemon`\n  * [#22](https://github.com/NullVoxPopuli/turbo-daemon/pull/22) Add ARM testing ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
